@@ -49,13 +49,13 @@ const Navbar = () => {
         </ul>
         
         <div className="nav-actions">
-          <button
+          {/* <button
             className="theme-toggle"
             onClick={toggleTheme}
             aria-label="Toggle theme"
           >
             {theme === "light" ? "🌙" : "☀️"}
-          </button>
+          </button> */}
           <div
             className="hamburger-menu"
             onClick={toggleMobileNav}
