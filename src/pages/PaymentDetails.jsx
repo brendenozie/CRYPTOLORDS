@@ -43,7 +43,7 @@ const PaymentDetails = () => {
           <h3 className="summary-title">Summary</h3>
           <div className="summary-item">
             <span>Subtotal</span>
-            <span>$100.00</span>
+            <span>$2000.00</span>
           </div>
           <div className="summary-item">
             <span>Tax</span>
@@ -51,7 +51,7 @@ const PaymentDetails = () => {
           </div>
           <div className="summary-item total">
             <span>Total</span>
-            <span>$108.00</span>
+            <span>$2008.00</span>
           </div>
         </div>
 
