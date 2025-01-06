@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import book from '../assets/book.jpg';
 
@@ -144,7 +145,9 @@ const PackagesPage = () => {
               </ul>
             </div>
             <div className="card-footer">
-              <button>Learn More</button>
+              <Link to="/payment" className="service-link">
+                                Proceed <i className="fa-solid fa-arrow-right"></i>
+                              </Link>
             </div>
           </div>
         ))}
