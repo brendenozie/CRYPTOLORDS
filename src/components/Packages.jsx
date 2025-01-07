@@ -109,7 +109,7 @@ const PackagesPage = () => {
 
 
   return (
-    <section className="packages-section">
+    <section className="packages-section" id="packages">
       <h1 className="page-title">Explore Our Packages</h1>
       <div className="packages-grid">
         {packages.map((pkg, index) => (
@@ -145,9 +145,13 @@ const PackagesPage = () => {
               </ul>
             </div>
             <div className="card-footer">
-              <Link to="/payment" className="service-link">
-                                Proceed <i className="fa-solid fa-arrow-right"></i>
-                              </Link>
+              <Link
+                to="/payment"
+                state={{ packageDetails: pkg }}
+                className="service-link"
+              >
+                Proceed <i className="fa-solid fa-arrow-right"></i>
+              </Link>
             </div>
           </div>
         ))}

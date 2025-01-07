@@ -1,5 +1,6 @@
 import Btc from "../images/hero/bitcoin.png";
 import Eth from "../images/hero/ethereum.png";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 function Join() {
   return (
@@ -18,14 +19,9 @@ function Join() {
               Step into the world of crypto with us. Learn, share, and grow with
               like-minded enthusiasts in a supportive and engaging environment.
             </p>
-            <a
-              href="https://"
-              target="_blank"
-              rel="noreferrer"
-              className="join-button"
-            >
-              Join Us
-            </a>
+            
+          <AnchorLink href={"#packages"}  className="join-button" >🚀 
+              Join Us</AnchorLink>
           </div>
         </div>
       </div>

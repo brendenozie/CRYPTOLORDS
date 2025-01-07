@@ -26,10 +26,10 @@ const Navbar = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
 
   const links = [
-    { href: "#home", label: "Home" },
-    { href: "#market", label: "Market" },
-    { href: "#choose-us", label: "Choose Us" },
-    { href: "#join", label: "Join" },
+    { href: "#packages", label: "Home" },
+    { href: "#packages", label: "Market" },
+    { href: "#packages", label: "Choose Us" },
+    { href: "#packages", label: "Join" },
   ];
 
   return (
