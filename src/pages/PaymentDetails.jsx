@@ -75,12 +75,13 @@ const PaymentPage = () => {
             <div className="payment-crypto-payment fade-in">
               <h2>Pay with Binance</h2>
               <p>
+                Send <strong>{packageDetails.price}USDT</strong>
+              </p>              
+              <h3>
                 <strong>Network Tron (TRC20)</strong>
-              </p>
-              <p>
-                Send <strong>USDT{packageDetails.price}</strong>
-              </p>
-              <p><strong>Wallet Address:</strong> TXpwFoc64Z8z7ZFBxEX95DATUeteZ4tk9n</p>
+              </h3>
+              <p><strong>Wallet Address:</strong></p>
+              <p>TXpwFoc64Z8z7ZFBxEX95DATUeteZ4tk9n</p> 
               <div className="payment-qr-code">
                 <QRCodeCanvas value="TXpwFoc64Z8z7ZFBxEX95DATUeteZ4tk9n" size={150} />
               </div>
