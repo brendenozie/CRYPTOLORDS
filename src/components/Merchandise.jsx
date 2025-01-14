@@ -15,7 +15,7 @@ const Merchandise = () => {
         { name: "Notebook", description: "Track your trading notes and strategies.", image: notebook, price: "$15" },
         { name: "Shirt", description: "Look good while being relaxed all the time.", image: shirt , price: "$25"},
         { name: "Sweatshirt", description: "Comfortable and stylish for any occasion.", image: sweatshirt, price: "$35" },
-        { name: "Hoodie", description: "Casual yet professional trading-themed apparel.", image: hoodie, price: "$45" }
+        { name: "Hoodie", description: "Casual yet professional trading apparel.", image: hoodie, price: "$45" }
       ]
     }
   };
