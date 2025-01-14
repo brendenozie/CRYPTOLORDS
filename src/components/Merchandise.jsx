@@ -13,9 +13,9 @@ const Merchandise = () => {
     title: "Our Merchandise",
     details: {
       content: [
-        { name: "Notebook", description: "Track your trading notes and strategies.", image: notebook, price: "$15" },
-        { name: "Sweatshirt", description: "Comfortable and stylish for any occasion.", image: sweatshirt, price: "$20" },
-        { name: "Hoodie", description: "Casual yet professional trading apparel.", image: hoodie, price: "$25" }
+        { name: "Notebook", description: "Track your trading notes and strategies.", image: notebook, price: "15" },
+        { name: "Sweatshirt", description: "Comfortable and stylish for any occasion.", image: sweatshirt, price: "20" },
+        { name: "Hoodie", description: "Casual yet professional trading apparel.", image: hoodie, price: "25" }
       ]
     }
   };
@@ -30,7 +30,7 @@ const Merchandise = () => {
             <div className="merchandise-content">
               <h3>{item.name}</h3>
               <p>{item.description}</p>
-              <h2>{item.price}</h2>
+              <h2>${item.price}</h2>
               <Link
                               to="/payment"
                               state={{ packageDetails: item }}
