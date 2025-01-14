@@ -965,11 +965,11 @@ body {
 }
 
 .merchandise-content h2 {
-  font-size: 1.4em;
+  font-size: 2em;
   font-weight: bold;
   color: #f0b90b;
   margin-bottom: 10px;
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 .merchandise-content p {
