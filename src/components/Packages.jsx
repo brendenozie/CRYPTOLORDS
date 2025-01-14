@@ -8,6 +8,7 @@ const PackagesPage = () => {
   const packages = [
   {
     title: "Monthly Community Access",
+    price:"$39",
     highlights: [
       "Access actionable trading signals.",
       "Real-time updates on market trends.",
@@ -32,6 +33,7 @@ const PackagesPage = () => {
   },
   {
     title: "General/Basic Course",
+    price:"$299",
     highlights: [
       "Learn the essentials of trading.",
       "Develop foundational market knowledge.",
@@ -56,6 +58,7 @@ const PackagesPage = () => {
   },
   {
     title: "Magic of P2P Trading",
+    price:"$499",
     highlights: [
       "Master P2P trading with an intensive program.",
       "Learn strategies to start earning quickly.",
@@ -79,7 +82,8 @@ const PackagesPage = () => {
     ],
   },
   {
-    title: "Project Signing (Absolutely Free)",
+    title: "Project Signing",
+    price:"$2,000",
     highlights: [
       "Opportunity to grow your trading capital significantly.",
       "Personalized guidance and mentorship.",
@@ -116,6 +120,7 @@ const PackagesPage = () => {
           <div className="package-card" key={index}>
             <div className="card-header">
               <h2>{pkg.title}</h2>
+              <h3>{pkg.price}</h3>
             </div>
             <div className="card-body">
               <h3>Highlights</h3>

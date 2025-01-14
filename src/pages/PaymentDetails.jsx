@@ -66,7 +66,7 @@ const NewPaymentDetails = () => {
 
           <div className="details">
             <p><strong>Duration:</strong> {packageDetails.details.duration}</p>
-            <p><strong>Price:</strong> <span className="price">$2000.00</span></p>
+            <p><strong>Price:</strong> <span className="price">{packageDetails.details.price}</span></p>
           </div>
         </div>
 
