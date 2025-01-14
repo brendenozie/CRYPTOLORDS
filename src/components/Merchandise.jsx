@@ -31,7 +31,7 @@ const Merchandise = () => {
             <div className="merchandise-content">
               <h3>{item.name}</h3>
               <p>{item.description}</p>
-              <h5>{item.price}</h5>
+              <h2>{item.price}</h2>
               <AnchorLink href={"#packages"} >Learn More</AnchorLink>
             </div>
           </div>
