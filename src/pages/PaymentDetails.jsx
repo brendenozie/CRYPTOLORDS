@@ -42,13 +42,13 @@ const PaymentPage = () => {
         {/* Tabs */}
         <div className="payment-methods">
           <button
-            className={`payment-method-tab ${activeMethod === 'mpesa' ? 'active' : ''}`}
+            className={`payment-method-tab payment-mpesa ${activeMethod === 'mpesa' ? 'active' : ''}`}
             onClick={() => setActiveMethod('mpesa')}
           >
             <FaMobileAlt /> M-Pesa
           </button>
           <button
-            className={`payment-method-tab ${activeMethod === 'binance' ? 'active' : ''}`}
+            className={`payment-method-tab payment-binance ${activeMethod === 'binance' ? 'active' : ''}`}
             onClick={() => setActiveMethod('binance')}
           >
             <FaBitcoin /> Binance
@@ -62,13 +62,12 @@ const PaymentPage = () => {
         <div className="payment-content">
           {activeMethod === 'mpesa' && (
             <div className="payment-mpesa-payment fade-in">
-              <h2>Pay via M-Pesa</h2>
+              <h2>Pay via Paybill</h2>
               <p>
                 Send <strong>KSH {packageDetails.price}</strong> to the following:
               </p>
               <p><strong>PayBill:</strong> 123456</p>
               <p><strong>Account Number:</strong> 123456</p>
-              
             </div>
           )}
 

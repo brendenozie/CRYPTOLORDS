@@ -1496,7 +1496,7 @@ body {
 .hero-section {
   text-align: center;
   padding: 3rem 1rem;
-  background: linear-gradient(135deg, #6c63ff, #4caf50);
+  background: #000000;
   color: #fff;
 }
 
@@ -1668,6 +1668,14 @@ body {
   gap: 0.5rem;
 }
 
+.payment-mpesa {
+  color: #04af0a;
+}
+
+.payment-binance {
+  color: #e57d06;
+}
+
 .payment-method-tab.active {
   background: linear-gradient(135deg, #ff5722, #ff9800);
   color: #fff;
@@ -1747,7 +1755,7 @@ button {
 }
 
 button:hover {
-  background: #5a52e0;
+  background: #727273;
   transform: scale(1.05);
 }
 
