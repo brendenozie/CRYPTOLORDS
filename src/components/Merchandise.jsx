@@ -2,6 +2,7 @@ import React from "react";
 import notebook from '../assets/5.jpg';
 import sweatshirt from '../assets/3.jpg';
 import hoodie from '../assets/2.jpg';
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Merchandise = () => {
   const merchandiseData = {
@@ -26,7 +27,7 @@ const Merchandise = () => {
             <div className="merchandise-content">
               <h3>{item.name}</h3>
               <p>{item.description}</p>
-              <a href="#">Learn More</a>
+              <AnchorLink href={"#packages"} >Learn More</AnchorLink>
             </div>
           </div>
         ))}
