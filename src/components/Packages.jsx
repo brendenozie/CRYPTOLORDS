@@ -31,6 +31,32 @@ const PackagesPage = () => {
       "Access is limited to one user per subscription."
     ],
   },
+  
+  {
+    title: "Magic of P2P Trading",
+    price:"$149",
+    highlights: [
+      "Master P2P trading with an intensive program.",
+      "Learn strategies to start earning quickly.",
+      "Hands-on training with experienced mentors."
+    ],
+    details: {
+      duration: "1 Week Masterclass",
+      content: [
+        "In-depth exploration of P2P trading techniques.",
+        "Daily live sessions with practical demonstrations.",
+        "Support and feedback on real-time trading exercises."
+      ],
+    },
+    requirements: [
+      "Basic knowledge of trading recommended.",
+      "Access to a trading platform for practice."
+    ],
+    terms: [
+      "100% satisfaction guarantee with actionable strategies.",
+      "Support continues post-masterclass for one month."
+    ],
+  },
   {
     title: "General/Basic Course",
     price:"$299",
@@ -54,31 +80,6 @@ const PackagesPage = () => {
     terms: [
       "Course material is accessible for the duration of the course.",
       "Certificate of completion is awarded after finishing all modules."
-    ],
-  },
-  {
-    title: "Magic of P2P Trading",
-    price:"$499",
-    highlights: [
-      "Master P2P trading with an intensive program.",
-      "Learn strategies to start earning quickly.",
-      "Hands-on training with experienced mentors."
-    ],
-    details: {
-      duration: "1 Week Masterclass",
-      content: [
-        "In-depth exploration of P2P trading techniques.",
-        "Daily live sessions with practical demonstrations.",
-        "Support and feedback on real-time trading exercises."
-      ],
-    },
-    requirements: [
-      "Basic knowledge of trading recommended.",
-      "Access to a trading platform for practice."
-    ],
-    terms: [
-      "100% satisfaction guarantee with actionable strategies.",
-      "Support continues post-masterclass for one month."
     ],
   },
   {
