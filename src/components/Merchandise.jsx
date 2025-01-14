@@ -6,6 +6,7 @@ import hoodie from '../assets/2.jpg';
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { p } from "framer-motion/client";
 
+// update trigger
 const Merchandise = () => {
   const merchandiseData = {
     title: "Our Merchandise",
