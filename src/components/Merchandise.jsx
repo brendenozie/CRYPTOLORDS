@@ -13,9 +13,8 @@ const Merchandise = () => {
     details: {
       content: [
         { name: "Notebook", description: "Track your trading notes and strategies.", image: notebook, price: "$15" },
-        { name: "Shirt", description: "Look good while being relaxed all the time.", image: shirt , price: "$25"},
-        { name: "Sweatshirt", description: "Comfortable and stylish for any occasion.", image: sweatshirt, price: "$35" },
-        { name: "Hoodie", description: "Casual yet professional trading apparel.", image: hoodie, price: "$45" }
+        { name: "Sweatshirt", description: "Comfortable and stylish for any occasion.", image: sweatshirt, price: "$20" },
+        { name: "Hoodie", description: "Casual yet professional trading apparel.", image: hoodie, price: "$25" }
       ]
     }
   };
@@ -23,7 +22,6 @@ const Merchandise = () => {
   return (
     <div className="merchandise-container">
       <h1 className="merchandise-title">{merchandiseData.title}</h1>
-
       <section className="merchandise-details">
         {merchandiseData.details.content.map((item, index) => (
           <div className="merchandise-item" key={index}>
