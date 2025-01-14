@@ -30,7 +30,7 @@ const Merchandise = () => {
             <div className="merchandise-content">
               <h3>{item.name}</h3>
               <p>{item.description}</p>
-              <p>{item.price}</p>
+              <h5>{item.price}</h5>
               <AnchorLink href={"#packages"} >Learn More</AnchorLink>
             </div>
           </div>
