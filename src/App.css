@@ -1786,6 +1786,11 @@ button:hover::after {
     justify-content: center;
   }
 
+    .payment-crypto-payment p {
+      margin: 0.8rem 0;
+      font-size: 0.5rem;
+    }
+
   .payment-content {
     min-width: 214px;
   }
