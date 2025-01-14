@@ -8,7 +8,7 @@ const PackagesPage = () => {
   const packages = [
   {
     title: "Monthly Community Access",
-    price:"$39",
+    price:"39",
     highlights: [
       "Access actionable trading signals.",
       "Real-time updates on market trends.",
@@ -33,7 +33,7 @@ const PackagesPage = () => {
   },  
   {
     title: "Magic of P2P Trading",
-    price:"$149",
+    price:"149",
     highlights: [
       "Master P2P trading with an intensive program.",
       "Learn strategies to start earning quickly.",
@@ -58,7 +58,7 @@ const PackagesPage = () => {
   },
   {
     title: "General/Basic Course",
-    price:"$299",
+    price:"299",
     highlights: [
       "Learn the essentials of trading.",
       "Develop foundational market knowledge.",
@@ -83,7 +83,7 @@ const PackagesPage = () => {
   },
   {
     title: "Project Signing",
-    price:"$2,000",
+    price:"2,000",
     highlights: [
       "Opportunity to grow your trading capital significantly.",
       "Personalized guidance and mentorship.",

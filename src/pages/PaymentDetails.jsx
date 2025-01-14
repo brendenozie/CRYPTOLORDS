@@ -75,7 +75,10 @@ const PaymentPage = () => {
             <div className="payment-crypto-payment fade-in">
               <h2>Pay with Binance</h2>
               <p>
-                Send <strong>USDT{packageDetails.price} BTC</strong> to the wallet address below:
+                <strong>Network Tron (TRC20)</strong>
+              </p>
+              <p>
+                Send <strong>USDT{packageDetails.price}</strong>
               </p>
               <p><strong>Wallet Address:</strong> TXpwFoc64Z8z7ZFBxEX95DATUeteZ4tk9n</p>
               <div className="payment-qr-code">
