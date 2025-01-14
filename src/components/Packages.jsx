@@ -120,6 +120,8 @@ const PackagesPage = () => {
           <div className="package-card" key={index}>
             <div className="card-header">
               <h2>{pkg.title}</h2>
+            </div>
+            <div className="card-price">              
               <h3>{pkg.price}</h3>
             </div>
             <div className="card-body">
