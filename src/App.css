@@ -908,16 +908,10 @@ body {
 }
 
 
-
-
-
-
-
 /* Merchandise.css */
 
 .merchandise-container {
   font-family: 'Poppins', sans-serif;
-  max-width: 900px;
   margin: 20px auto;
   padding: 30px;
   border-radius: 15px;

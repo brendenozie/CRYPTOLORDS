@@ -13,9 +13,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/payment" element={<PaymentDetails />} ></Route>
-        {/* <Route path="/coin" element={<Coin />}>
-          <Route path=":coinId" element={<Coin />}></Route>
-        </Route> */}
       </Routes>
      
     </>
