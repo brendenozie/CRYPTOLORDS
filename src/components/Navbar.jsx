@@ -27,8 +27,7 @@ const Navbar = () => {
 
   const links = [
     { href: "#packages", label: "Home" },
-    { href: "#packages", label: "Market" },
-    { href: "#packages", label: "Choose Us" },
+    { href: "#merchandise", label: "Market" },
     { href: "#packages", label: "Join" },
   ];
 

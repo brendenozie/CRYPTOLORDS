@@ -21,7 +21,7 @@ const Merchandise = () => {
   };
 
   return (
-    <div className="merchandise-container">
+    <div className="merchandise-container" id="merchandise">
       <h1 className="merchandise-title">{merchandiseData.title}</h1>
       <section className="merchandise-details">
         {merchandiseData.details.content.map((item, index) => (

@@ -66,8 +66,8 @@ const PaymentPage = () => {
               <p>
                 Send <strong>KSH {packageDetails.price}</strong> to the following:
               </p>
-              <p><strong>PayBill:</strong> 123456</p>
-              <p><strong>Account Number:</strong> 123456</p>
+              <p><strong>PayBill:</strong> 4123143</p>
+              <p><strong>Account Number:</strong> trade cafe</p>
             </div>
           )}
 
@@ -77,9 +77,9 @@ const PaymentPage = () => {
               <p>
                 Send <strong>{cryptoAmount} BTC</strong> to the wallet address below:
               </p>
-              <p><strong>Wallet Address:</strong> 0x123abc456def...</p>
+              <p><strong>Wallet Address:</strong> TXpwFoc64Z8z7ZFBxEX95DATUeteZ4tk9n</p>
               <div className="payment-qr-code">
-                <QRCodeCanvas value="0x123abc456def..." size={150} />
+                <QRCodeCanvas value="TXpwFoc64Z8z7ZFBxEX95DATUeteZ4tk9n" size={150} />
               </div>
               <p className="payment-note">Ensure the exact amount is sent to avoid delays.</p>
             </div>
