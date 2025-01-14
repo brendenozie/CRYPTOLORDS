@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import throttle from "lodash.throttle";
 
 const Navbar = () => {
@@ -26,9 +25,9 @@ const Navbar = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
 
   const links = [
-    { href: "#packages", label: "Home" },
-    { href: "#merchandise", label: "Market" },
-    { href: "#packages", label: "Join" },
+    { to: "/#packages", label: "Home" },
+    { to: "/#merchandise", label: "Market" },
+    { to: "/#packages", label: "Join" },
   ];
 
   return (
@@ -39,22 +38,14 @@ const Navbar = () => {
         </NavLink>
         <ul className={`nav-links ${mobileOpen ? "mobile-open" : ""}`}>
           {links.map((link) => (
-            <li key={link.href}>
-              <AnchorLink href={link.href} onClick={closeMobileNav}>
+            <li key={link.to}>
+              <NavLink to={link.to} onClick={closeMobileNav}>
                 {link.label}
-              </AnchorLink>
+              </NavLink>
             </li>
           ))}
         </ul>
-        
         <div className="nav-actions">
-          {/* <button
-            className="theme-toggle"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-          >
-            {theme === "light" ? "🌙" : "☀️"}
-          </button> */}
           <div
             className="hamburger-menu"
             onClick={toggleMobileNav}
@@ -66,7 +57,6 @@ const Navbar = () => {
             />
           </div>
         </div>
-
       </div>
     </nav>
   );
