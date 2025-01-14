@@ -75,7 +75,7 @@ const PaymentPage = () => {
             <div className="payment-crypto-payment fade-in">
               <h2>Pay with Binance</h2>
               <p>
-                Send <strong>{packageDetails.price}USDT</strong>
+                Send <strong>{packageDetails.price} USDT</strong>
               </p>              
               <h3>
                 <strong>Network Tron (TRC20)</strong>
