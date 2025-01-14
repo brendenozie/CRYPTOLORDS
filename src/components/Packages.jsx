@@ -30,8 +30,7 @@ const PackagesPage = () => {
       "Subscription is billed monthly and can be canceled anytime.",
       "Access is limited to one user per subscription."
     ],
-  },
-  
+  },  
   {
     title: "Magic of P2P Trading",
     price:"$149",

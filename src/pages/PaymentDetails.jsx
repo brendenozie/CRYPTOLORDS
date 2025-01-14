@@ -1,16 +1,14 @@
+import { QRCodeCanvas } from 'qrcode.react';
 import React, { useState } from 'react';
-import { useLocation } from "react-router-dom";
-import { FaCheckCircle, FaGift } from 'react-icons/fa';
+import { useLocation } from 'react-router-dom';
+import QRCode from 'qrcode.react';
+import { FaMobileAlt, FaBitcoin, FaPaypal, FaCreditCard } from 'react-icons/fa';
 
-const NewPaymentDetails = () => {
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [cardDetails, setCardDetails] = useState({
-    cardNumber: '',
-    expiryDate: '',
-    cvv: '',
-    cardHolder: '',
-  });
-
+const PaymentPage = () => {
+  const [activeMethod, setActiveMethod] = useState('mpesa');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [error, setError] = useState('');
+  const cryptoAmount = '0.05';
   const location = useLocation();
   const { packageDetails } = location.state || {};
 
@@ -20,124 +18,99 @@ const NewPaymentDetails = () => {
         <p>No package selected. Please go back and choose a package.</p>
       </div>
     );
-  }
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setCardDetails((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handlePayment = (e) => {
-    e.preventDefault();
-    setIsProcessing(true);
-    setTimeout(() => {
-      alert("🎉 Payment Successful!");
-      setIsProcessing(false);
-    }, 3000);
+  const handlePhoneChange = (e) => {
+    setPhoneNumber(e.target.value);
+    setError(!/^\+?\d{9,15}$/.test(e.target.value) ? 'Invalid phone number' : '');
   };
 
-  const { cardNumber, expiryDate, cvv, cardHolder } = cardDetails;
+  const handlePayment = () => {
+    alert(`Processing payment for method: ${activeMethod}`);
+  };
 
   return (
     <div className="payment-page">
       {/* Hero Section */}
       <div className="hero-section">
         <h1>Complete Your Payment</h1>
-        <p>Secure and encrypted checkout for your package.</p>
+        <p>Choose your preferred method below.</p>
       </div>
 
+      {/* Payment Container */}
       <div className="payment-container">
-        {/* Package Summary */}
-        <div className="package-summary">
-          <div className="header">
-            <div className="icon">
-              <FaGift size={30} color="#4caf50" />
-            </div>
-            <h2>{packageDetails.title}</h2>
-          </div>
-
-          <ul className="highlights">
-            {packageDetails.highlights.map((highlight, index) => (
-              <li key={index}>
-                <FaCheckCircle size={16} color="#4caf50" /> {highlight}
-              </li>
-            ))}
-          </ul>
-
-          <div className="details">
-            <p><strong>Duration:</strong> {packageDetails.details.duration}</p>
-            <p><strong>Price:</strong> <span className="price">{packageDetails.details.price}</span></p>
-          </div>
+        {/* Tabs */}
+        <div className="payment-methods">
+          <button
+            className={`payment-method-tab ${activeMethod === 'mpesa' ? 'active' : ''}`}
+            onClick={() => setActiveMethod('mpesa')}
+          >
+            <FaMobileAlt /> M-Pesa
+          </button>
+          <button
+            className={`payment-method-tab ${activeMethod === 'binance' ? 'active' : ''}`}
+            onClick={() => setActiveMethod('binance')}
+          >
+            <FaBitcoin /> Binance
+          </button>
+          <button className="payment-method-tab disabled">
+            <FaCreditCard /> Card (Coming Soon)
+          </button>
         </div>
 
+        {/* Dynamic Content */}
+        <div className="payment-content">
+          {activeMethod === 'mpesa' && (
+            <div className="payment-mpesa-payment fade-in">
+              <h2>Pay via M-Pesa</h2>
+              <p>
+                Send <strong>KSH {packageDetails.price}</strong> to the following:
+              </p>
+              <p><strong>PayBill:</strong> 123456</p>
+              <p><strong>Account Number:</strong> 123456</p>
+              
+            </div>
+          )}
 
-        {/* Payment Form */}
-        <div className="payment-form-container">
-          {/* Card Preview */}
-          <div className="card-preview">
-            <div className="card">
-              <div className="card-number">{cardNumber || '**** **** **** ****'}</div>
-              <div className="card-holder">{cardHolder || 'Card Holder'}</div>
-              <div className="card-expiry">{expiryDate || 'MM/YY'}</div>
+          {activeMethod === 'binance' && (
+            <div className="payment-crypto-payment fade-in">
+              <h2>Pay with Binance</h2>
+              <p>
+                Send <strong>{cryptoAmount} BTC</strong> to the wallet address below:
+              </p>
+              <p><strong>Wallet Address:</strong> 0x123abc456def...</p>
+              <div className="payment-qr-code">
+                <QRCodeCanvas value="0x123abc456def..." size={150} />
+              </div>
+              <p className="payment-note">Ensure the exact amount is sent to avoid delays.</p>
             </div>
-          </div>
+          )}
 
-          {/* Form */}
-          <form onSubmit={handlePayment} className="payment-form">
-            <div className="input-group">
-              <label>Card Number</label>
-              <input
-                type="text"
-                name="cardNumber"
-                value={cardNumber}
-                onChange={handleInputChange}
-                placeholder="1234 5678 9012 3456"
-                required
-              />
+          {activeMethod === 'paypal' && (
+            <div className="payment-paypal-payment fade-in">
+              <h2>Pay with PayPal</h2>
+              <button className="payment-paypal-button" onClick={handlePayment}>
+                Proceed to PayPal
+              </button>
             </div>
-            <div className="input-group">
-              <label>Card Holder Name</label>
-              <input
-                type="text"
-                name="cardHolder"
-                value={cardHolder}
-                onChange={handleInputChange}
-                placeholder="John Doe"
-                required
-              />
-            </div>
-            <div className="input-row">
-              <div className="input-group">
-                <label>Expiry Date</label>
-                <input
-                  type="text"
-                  name="expiryDate"
-                  value={expiryDate}
-                  onChange={handleInputChange}
-                  placeholder="MM/YY"
-                  required
-                />
-              </div>
-              <div className="input-group">
-                <label>CVV</label>
-                <input
-                  type="password"
-                  name="cvv"
-                  value={cvv}
-                  onChange={handleInputChange}
-                  placeholder="•••"
-                  required
-                />
-              </div>
-            </div>
-            <button type="submit" disabled={isProcessing}>
-              {isProcessing ? 'Processing...' : 'Pay $2000.00'}
-            </button>
-          </form>
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-export default NewPaymentDetails;
+export default PaymentPage;
+
+
+
+
+
+
+
+
+
+
+
+
+

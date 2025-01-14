@@ -5,6 +5,7 @@ import sweatshirt from '../assets/7.jpg';
 import hoodie from '../assets/2.jpg';
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { p } from "framer-motion/client";
+import { Link } from "react-router-dom";
 
 // update trigger
 const Merchandise = () => {
@@ -30,7 +31,11 @@ const Merchandise = () => {
               <h3>{item.name}</h3>
               <p>{item.description}</p>
               <h2>{item.price}</h2>
-              <AnchorLink href={"#packages"} >Learn More</AnchorLink>
+              <Link
+                              to="/payment"
+                              state={{ packageDetails: item }}
+                              className="service-link"
+                            >PROCEED</Link>
             </div>
           </div>
         ))}
