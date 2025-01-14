@@ -64,7 +64,7 @@ const PaymentPage = () => {
             <div className="payment-mpesa-payment fade-in">
               <h2>Pay via Paybill</h2>
               <p>
-                Send <strong>KSH {packageDetails.price}</strong> to the following:
+                Send <strong>${packageDetails.price}</strong> to the following:
               </p>
               <p><strong>PayBill:</strong> 4123143</p>
               <p><strong>Account Number:</strong> trade cafe</p>
@@ -75,7 +75,7 @@ const PaymentPage = () => {
             <div className="payment-crypto-payment fade-in">
               <h2>Pay with Binance</h2>
               <p>
-                Send <strong>{cryptoAmount} BTC</strong> to the wallet address below:
+                Send <strong>USDT{packageDetails.price} BTC</strong> to the wallet address below:
               </p>
               <p><strong>Wallet Address:</strong> TXpwFoc64Z8z7ZFBxEX95DATUeteZ4tk9n</p>
               <div className="payment-qr-code">
