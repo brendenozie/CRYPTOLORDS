@@ -2,7 +2,6 @@ import Home from "./pages/Home";
 import './App.css';
 import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
-import Coin from "./pages/Coin";
 import PaymentDetails from "./pages/PaymentDetails";
 
 function App() {
