@@ -47,8 +47,8 @@ html {
 }
 
 .navbar.sticky {
-  /* background: var(--sticky-bg);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+  background: var(--sticky-bg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-container {
