@@ -36,7 +36,7 @@ html {
   width: 100%;
   padding: 15px 20px;
   background-color: var(--background);
-  color: var(--text-color);
+  color: #fff;
   display: flex;
   align-items: center;
   font-weight: 800;
