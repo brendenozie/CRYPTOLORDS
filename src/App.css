@@ -48,7 +48,7 @@ html {
 
 .navbar.sticky {
   background: var(--sticky-bg);
-  color: #333333;
+  color: #333333 !important;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -79,7 +79,7 @@ html {
   text-decoration: none;
   /* color: var(--text-color); */
   font-size: 1rem;
-  /* color: #fff; */
+  color: #fff;
   padding: 10px 15px;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
