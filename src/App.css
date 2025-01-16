@@ -58,6 +58,7 @@ html {
   align-items: center;
   width: 100%;
   margin: 0 auto;
+  color: #fff;
 }
 
 .logo {
@@ -71,6 +72,7 @@ html {
   display: flex;
   list-style: none;
   gap: 20px;
+  color: #fff;
 }
 
 .nav-links li a {
