@@ -48,6 +48,7 @@ html {
 
 .navbar.sticky {
   background: var(--sticky-bg);
+  color: #333333;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
