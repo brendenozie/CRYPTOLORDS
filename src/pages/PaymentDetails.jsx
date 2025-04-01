@@ -1,32 +1,44 @@
-import { QRCodeCanvas } from 'qrcode.react';
+
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import QRCode from 'qrcode.react';
-import { FaMobileAlt, FaBitcoin, FaPaypal, FaCreditCard } from 'react-icons/fa';
+import { usePaystackPayment } from "react-paystack";
+import { FaCreditCard, FaLock, FaShieldAlt } from 'react-icons/fa';
 
 const PaymentPage = () => {
-  const [activeMethod, setActiveMethod] = useState('mpesa');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [error, setError] = useState('');
-  const cryptoAmount = '0.05';
   const location = useLocation();
   const { packageDetails } = location.state || {};
 
+  const paystackConfig = {
+    reference: new Date().getTime().toString(),
+    email: "user@example.com", // Replace dynamically
+    amount: packageDetails?.price * 100 || 0, // Convert to kobo
+    publicKey: "pk_test_8b3ceeb83631c1d3651158f7e8d3c9d4b8101680",
+  };
+
+  const initializePayment = usePaystackPayment(paystackConfig);
+
   if (!packageDetails) {
     return (
-      <div className="error-message">
-        <p>No package selected. Please go back and choose a package.</p>
+      <div className="flex h-screen items-center justify-center bg-gray-100 border border-red-500">
+        <div className="text-center p-6 bg-white shadow-lg rounded-lg">
+          <h2 className="text-xl font-semibold text-red-500">No package selected</h2>
+          <p className="text-gray-500 mt-2">Please go back and choose a package.</p>
+        </div>
       </div>
     );
-  };
+  }
 
-  const handlePhoneChange = (e) => {
-    setPhoneNumber(e.target.value);
-    setError(!/^\+?\d{9,15}$/.test(e.target.value) ? 'Invalid phone number' : '');
-  };
-
-  const handlePayment = () => {
-    alert(`Processing payment for method: ${activeMethod}`);
+  const handlePaystackPayment = () => {
+    initializePayment(
+      (reference) => {
+        console.log("Payment successful", reference);
+        alert("Payment successful!");
+      },
+      () => {
+        console.log("Payment closed");
+        alert("Payment canceled.");
+      }
+    );
   };
 
   return (
@@ -39,65 +51,45 @@ const PaymentPage = () => {
 
       {/* Payment Container */}
       <div className="payment-container">
-        {/* Tabs */}
-        <div className="payment-methods">
-          <button
-            className={`payment-method-tab payment-mpesa ${activeMethod === 'mpesa' ? 'active' : ''}`}
-            onClick={() => setActiveMethod('mpesa')}
-          >
-            <FaMobileAlt /> M-Pesa
-          </button>
-          <button
-            className={`payment-method-tab payment-binance ${activeMethod === 'binance' ? 'active' : ''}`}
-            onClick={() => setActiveMethod('binance')}
-          >
-            <FaBitcoin /> Binance
-          </button>
-          <button className="payment-method-tab disabled">
-            <FaCreditCard /> Card (Coming Soon)
-          </button>
+        <div className="flex items-center justify-center w-full h-screen bg-black p-6 border border-blue-500">
+      <div className="relative bg-gray-900 text-white rounded-3xl shadow-2xl p-10 w-full max-w-md text-center transform transition-all duration-500 hover:scale-105 flex flex-col items-center border border-green-500">
+        {/* Decorative Glows */}
+        <div className="absolute -top-14 -right-14 w-40 h-40 bg-purple-500 opacity-20 blur-3xl rounded-full"></div>
+        <div className="absolute bottom-14 -left-14 w-32 h-32 bg-indigo-500 opacity-20 blur-3xl rounded-full"></div>
+
+        {/* Header */}
+        <h2 className="text-3xl font-bold text-white">Secure Payment</h2>
+        <p className="text-gray-400 mt-2">Complete your transaction safely.</p>
+
+        {/* Package Details */}
+        <div className="payment-mpesa-payment fade-in">     
+          <h3 className="text-lg font-semibold text-white">{packageDetails.name}</h3>
+          <p className="text-gray-300 mt-1"><strong>Total Amount:</strong></p>
+          <p className="text-4xl font-extrabold text-white">${packageDetails.price}</p>
         </div>
 
-        {/* Dynamic Content */}
-        <div className="payment-content">
-          {activeMethod === 'mpesa' && (
-            <div className="payment-mpesa-payment fade-in">
-              <h2>Pay via Paybill</h2>
-              <p>
-                Send <strong>${packageDetails.price}</strong> to the following:
-              </p>
-              <p><strong>PayBill:</strong> 4123143</p>
-              <p><strong>Account Number:</strong> trade cafe</p>
-            </div>
-          )}
+        {/* Paystack Button */}
+        <button
+          onClick={handlePaystackPayment}
+          className="mt-6 flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium py-4 px-8 rounded-full shadow-lg transition-all transform hover:-translate-y-1 hover:shadow-xl w-full"
+        >
+          <FaCreditCard className="text-xl" />
+          Pay with Paystack
+        </button>
 
-          {activeMethod === 'binance' && (
-            <div className="payment-crypto-payment fade-in">
-              <h2>Pay with Binance</h2>
-              <p>
-                Send <strong>{packageDetails.price} USDT</strong>
-              </p>              
-              <h3>
-                <strong>Network Tron (TRC20)</strong>
-              </h3>
-              <p><strong>Wallet Address:</strong></p>
-              <p>TXpwFoc64Z8z7ZFBxEX95DATUeteZ4tk9n</p> 
-              <div className="payment-qr-code">
-                <QRCodeCanvas value="TXpwFoc64Z8z7ZFBxEX95DATUeteZ4tk9n" size={150} />
-              </div>
-              <p className="payment-note">Ensure the exact amount is sent to avoid delays.</p>
-            </div>
-          )}
-
-          {activeMethod === 'paypal' && (
-            <div className="payment-paypal-payment fade-in">
-              <h2>Pay with PayPal</h2>
-              <button className="payment-paypal-button" onClick={handlePayment}>
-                Proceed to PayPal
-              </button>
-            </div>
-          )}
+        {/* Security Assurance */}
+        <div className="mt-6 flex justify-between w-full text-gray-300 text-sm">
+          <span className="flex items-center gap-1">
+            <FaLock className="text-green-400" />
+            100% Secure
+          </span>
+          <span className="flex items-center gap-1">
+            <FaShieldAlt className="text-blue-400" />
+            Fraud Protection
+          </span>
         </div>
+      </div>
+    </div>
       </div>
     </div>
   );
