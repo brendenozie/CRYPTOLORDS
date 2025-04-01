@@ -1832,3 +1832,131 @@ button:hover::after {
     font-size: 0.9rem;
   }
 }
+
+
+
+/* //pricing  */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Pricing Container */
+.pricing-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Pricing Card */
+.pricing-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Best Value Tag */
+.best-value {
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Headings */
+h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Price Styling */
+.pricing-price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.pricing-old-price {
+    text-decoration: line-through;
+    color: gray;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.pricing-monthly {
+    font-size: 14px;
+    color: gray;
+}
+
+/* Join Button */
+.pricing-join-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.pricing-join-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.pricing-join-btn:hover {
+    background-color: #333;
+}
+
+/* Features List */
+.pricing-features {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.pricing-features h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.pricing-features ul {
+    list-style: none;
+}
+
+.pricing-features li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

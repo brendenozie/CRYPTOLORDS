@@ -6,6 +6,7 @@ import Join from "../components/Join";
 import MarketUpdate from "../components/MarketUpdate";
 import Featurespage from "../components/features";
 import Packagespage from "../components/Packages";
+import Pricing from "../components/pricing";
 import Merchandise from "../components/Merchandise";
 import Profile from "../components/Profile";
 import { useLocation } from "react-router-dom";
@@ -28,7 +29,8 @@ function Home() {
       <HomeText />
       <Featurespage/>     
       <Profile/>
-      <Packagespage />
+      {/* <Packagespage /> */}
+      <Pricing />
       <Merchandise/>
       <Join />
       <Footer />
