@@ -9,7 +9,7 @@ const PaymentPage = () => {
   const location = useLocation();
   const { packageDetails } = location.state || {};
 
-  const publicKey = `${process.env.REACT_APP_LIVE_PUBLIC_KEY}`; // Replace with your Paystack Public Key
+  const publicKey = `${process.env.REACT_APP_LIVE_PUBLIC}`; // Replace with your Paystack Public Key
   const currency = "KES"; // Kenyan Shillings
   const amount = packageDetails?.price * 100 || 0;
 
