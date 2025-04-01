@@ -1,18 +1,41 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { usePaystackPayment } from "react-paystack";
 import { FaCreditCard, FaLock, FaShieldAlt } from 'react-icons/fa';
+import axios from "axios";
 
 const PaymentPage = () => {
   const location = useLocation();
   const { packageDetails } = location.state || {};
 
+  const publicKey = `${process.env.REACT_APP_LIVE_PUBLIC_KEY}`; // Replace with your Paystack Public Key
+  const currency = "KES"; // Kenyan Shillings
+  const amount = packageDetails?.price * 100 || 0;
+
+  const [exchangeRate, setExchangeRate] = useState(150); // Default rate (adjustable)
+
+  useEffect(() => {
+    // Fetch exchange rate from an API
+    axios
+      .get("https://api.exchangerate-api.com/v4/latest/USD") // Free Exchange API
+      .then((response) => {
+        setExchangeRate(response.data.rates.KES);
+      })
+      .catch((error) => {
+        console.error("Error fetching exchange rate:", error);
+      });
+  }, []);
+
+  // Convert USD to KES
+  const amountKES = amount * exchangeRate;
+
   const paystackConfig = {
     reference: new Date().getTime().toString(),
     email: "user@example.com", // Replace dynamically
-    amount: packageDetails?.price * 100 || 0, // Convert to kobo
-    publicKey: "pk_test_8b3ceeb83631c1d3651158f7e8d3c9d4b8101680",
+    amount: amountKES, // Convert to kobo
+    publicKey: publicKey,
+    currency:currency
   };
 
   const initializePayment = usePaystackPayment(paystackConfig);
