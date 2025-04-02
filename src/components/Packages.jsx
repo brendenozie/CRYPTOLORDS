@@ -152,7 +152,7 @@ const PackagesPage = () => {
             </div>
             <div className="card-footer">
               <Link
-                to="/payment"
+                to={`${pkg.title === "Free Plan" ? `/freecontent` : `/payment`}`}
                 state={{ packageDetails: pkg }}
                 className="service-link"
               >
