@@ -29,7 +29,6 @@ function Home() {
       <HomeText />
       <Featurespage/>     
       <Profile/>
-      {/* <Packagespage /> */}
       <Pricing />
       <Merchandise/>
       <Join />

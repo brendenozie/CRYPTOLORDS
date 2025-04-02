@@ -1838,21 +1838,7 @@ button:hover::after {
 /* //pricing  */
 
 /* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
 
-/* Body Styling */
-body {
-    background-color: #f8f8f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
 
 /* Pricing Container */
 .pricing-container {
@@ -2026,12 +2012,6 @@ video {
   background: #ffdb4d;
   transform: scale(1.05);
 }
-
-
-
-
-/* PRO-LABEL */
-
 
 .pro-card .pro-label {
   background: red;
