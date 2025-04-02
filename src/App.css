@@ -2026,3 +2026,39 @@ video {
   background: #ffdb4d;
   transform: scale(1.05);
 }
+
+
+
+
+/* PRO-LABEL */
+
+
+.pro-card .pro-label {
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.pricing-new-price {
+  color: black;
+}
+
+.pricing-join-btn {
+  background: black;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.pricing-not-included {
+  color: red;
+}

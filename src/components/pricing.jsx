@@ -4,7 +4,52 @@ import { Link } from "react-router-dom";
 const Pricing = () => {
 
   return (
-    <div class="pricing-container">
+    <div class="pricing-container">     
+      
+      {/* <!-- FREE PLAN --> */}
+      <div className="pricing-card free-card">
+        <h2>FREE PLAN</h2>
+        <p className="pricing-price">$0</p>
+        {/* <button className="join-btn">Join Now</button> */}
+        <Link
+                to="/"
+                state={{ packageDetails: {
+                          title: "Free Plan",
+                          price:"0",
+                          highlights: [
+                            "General Channel.",
+                            "Twitter Tracker.",
+                            "Bundle Checker"
+                          ],
+                          details: {
+                            duration: "1 Month (Recurring)",
+                            content: [
+                              "Coins with potential",
+                              "Live Trading Access",
+                              "Coverage"
+                            ],
+                          },
+                          requirements: [
+                            "",
+                            ""
+                          ],
+                          terms: [
+                            "",
+                            ""
+                          ],
+                        }, }}
+                className="pricing-join-btn"
+              >Join Now</Link>
+        <ul className="pricing-features">
+          <li>✔ General Channel</li>
+          <li>✔ Twitter Tracker</li>
+          <li>✔ Bundle Checker</li>
+          <li className="pricing-not-included">✖ Coins With Potential</li>
+          <li className="pricing-not-included">✖ Live Trading Access</li>
+          <li className="pricing-not-included">✖ Coverage</li>
+        </ul>
+      </div>
+      
         {/* <!-- Crypto Book Plan --> */}
         <div class="pricing-card">
             <div class="pricing-best-value">BEST VALUE</div>
@@ -88,6 +133,7 @@ const Pricing = () => {
                 className="pricing-join-btn"
               >Join Now</Link>
             <div class="pricing-features">
+              <h3>Why Choose DISCORD PREMIUM?</h3>
                 <ul>
                     <li>✅ Coins With Potential Bot</li>
                     <li>✅ Twitter Tracker (Premium)</li>
@@ -99,6 +145,57 @@ const Pricing = () => {
                 </ul>
             </div>
         </div>
+
+        
+
+      {/* <!-- PRO'S CHOICE --> */}
+      <div className="pricing-card pro-card">
+        <div className="pro-label">PRO'S CHOICE</div>
+        <h2>MENTORSHIP</h2>
+        <p className="pricing-price">
+          Was <span className="pricing-old-price">$199</span> <span className="new-price">$99.95</span>
+        </p>
+        {/* <button className="pricing-join-btn">Join Now</button> */}
+        <Link
+                to="/payment"
+                state={{ packageDetails: {
+                          title: "PRO'S CHOICE",
+                          price:"99.95",
+                          highlights: [
+                            "General Channel.",
+                            "Twitter Tracker.",
+                            "Bundle Checker"
+                          ],
+                          details: {
+                            duration: "1 Month (Recurring)",
+                            content: [
+                              "Coins with potential",
+                              "Live Trading Access",
+                              "Coverage"
+                            ],
+                          },
+                          requirements: [
+                            "",
+                            ""
+                          ],
+                          terms: [
+                            "",
+                            ""
+                          ],
+                        }, }}
+                className="pricing-join-btn"
+              >Join Now</Link>
+        <ul className="pricing-features">
+          <h3>Why Choose PRO'S CHOICE?</h3>
+          <li>✅ Mentorship</li>
+          <li>✅ Premium Discord</li>
+          <li>✅ Live Trading (All Day)</li>
+          <li>✅ Trades/Setups (All Day)</li>
+          <li>✅ Intraday Q&A Community (All Day)</li>
+          <li>✅ Coverage (Full Day)</li>
+          <li>✅ SK Chart Overlay & Courses (All-in-one Package)</li>
+        </ul>
+      </div>
     </div>
   );
 };
