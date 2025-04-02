@@ -69,9 +69,7 @@ const Pricing = () => {
                           details: {
                             duration: "1 Month (Recurring)",
                             content: [
-                              "Coins with potential",
-                              "Live Trading Access",
-                              "Coverage"
+                              ""
                             ],
                           },
                           requirements: [

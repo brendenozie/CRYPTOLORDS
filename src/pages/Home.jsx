@@ -10,6 +10,7 @@ import Pricing from "../components/pricing";
 import Merchandise from "../components/Merchandise";
 import Profile from "../components/Profile";
 import { useLocation } from "react-router-dom";
+import PackagesPage from "../components/Packages";
 
 function Home() {
    const location = useLocation();
@@ -29,7 +30,8 @@ function Home() {
       <HomeText />
       <Featurespage/>     
       <Profile/>
-      <Pricing />
+      <PackagesPage />
+      {/* <Pricing /> */}
       <Merchandise/>
       <Join />
       <Footer />

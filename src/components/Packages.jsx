@@ -5,14 +5,14 @@ const PackagesPage = () => {
   const packages = [
   {
     title: "Free Plan",
-    price:"0",
+    price:"1",
     highlights: [
       "General Channel.",
       "Twitter Tracker.",
       "Bundle Checker"
     ],
     details: {
-      duration: "1 Month (Recurring)",
+      duration: "",
       content: [
         "Coins with potential",
         "Live Trading Access",
@@ -29,19 +29,20 @@ const PackagesPage = () => {
     ],
   },  
   {
-    title: "Starter Plan",
+    title: "Crypto Book",
     price:"22",
     highlights: [
-      "The Future of money (Crypto Trading book)",
-      "Twitter Tracker (Basic)",
-      "Basic Discord Community"
+      "Comprehensive Crypto Education: Learn how cryptocurrencies are reshaping global finance.",
+       "Practical Trading Insights: Get actionable strategies to navigate the crypto market.",
+        "Stay Ahead of Trends: Understand DeFi, CBDCs, and market shifts.",
+         "Tools for Beginners: Monitor sentiment with Twitter Tracker.",
+          "Community Support: Join our Discord community.",
+           "Affordable Entry Point: Start your journey for just $22.",
     ],
     details: {
       duration: "",
       content: [
-        "Comprenhensive Crypto Education",
-        "Practical Trading insights",
-        "Stay ahead of trends"
+        
       ],
     },
     requirements: [
@@ -59,15 +60,16 @@ const PackagesPage = () => {
     highlights: [
       "Coins With Potential Bot",
       "Twitter Tracker",
-      "Live Trading"
+      "Live Trading",
+      "Coverage",
+        "Scanning",
+        "VC Rooms",
+        "Tools Guide"
     ],
     details: {
       duration: "",
       content: [
-        "Coverage",
-        "Scanning",
-        "VC Rooms",
-        "Tools Guide"
+        
       ],
     },
     requirements: [
@@ -80,19 +82,20 @@ const PackagesPage = () => {
     ],
   },
   {
-    title: "The Complete Trader",
+    title: "Pro's Choice",
     price:"99.95",
     highlights: [
       "Mentorship",
       "Premium Discord",
-      "Live Trading"
+      "Live Trading (All Day)",
+      "Trades/Setups (All Day)",
+      "Intraday Q&A Community (All Day)",
+      "Coverage (Full Day)",
+      "SK Chart Overlay & Courses (All-in-one Package)"
     ],
     details: {
       duration: "",
       content: [
-        "Trades/Setup",
-        "Intraday Q&A Community",
-        "Coverage (Full Day)"
       ],
     },
     requirements: [
@@ -129,7 +132,7 @@ const PackagesPage = () => {
               </ul>
               {/* <h3>Details</h3> */}
               {/* <p><strong>Duration:</strong> {pkg.details?.duration || "N/A"}</p> */}
-              <ul>
+              <ul className="details-list">
                 {pkg.details?.content.map((detail, i) => (
                   <li key={i}>{detail}</li>
                 ))}

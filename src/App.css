@@ -711,6 +711,7 @@ body {
 
 .card-body ul {
   list-style: none;
+  flex: auto;
   padding: 0;
   margin: 0;
 }
@@ -725,7 +726,23 @@ body {
   content: "✔";
   position: absolute;
   left: 0;
-  color: #4299e1;
+  color: #4ae142;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.card-body .details-list li {
+  position: relative;
+  /* Ensure positioning works correctly */
+  padding-left: 1.5rem;
+  /* Space for the icon */
+}
+
+.card-body .details-list li::before {
+  content: "✖";
+  position: absolute;
+  left: 0;
+  color: #f41111;
   font-size: 1rem;
   font-weight: bold;
 }
@@ -1838,7 +1855,21 @@ button:hover::after {
 /* //pricing  */
 
 /* General Reset */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+} */
 
+/* Body Styling */
+/* body {
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
 
 /* Pricing Container */
 .pricing-container {
