@@ -8,7 +8,7 @@ const Pricing = () => {
       
       {/* <!-- FREE PLAN --> */}
       <div className="pricing-card free-card">
-        <h2>FREE PLAN</h2>
+        <h2 >FREE PLAN</h2>
         <p className="pricing-price">$0</p>
         {/* <button className="join-btn">Join Now</button> */}
         <Link
@@ -51,8 +51,8 @@ const Pricing = () => {
       </div>
       
         {/* <!-- Crypto Book Plan --> */}
-        <div class="pricing-card">
-            <div class="pricing-best-value">BEST VALUE</div>
+        <div class="pricing-card pro-card">
+            <div class="pricing-best-value pro-label">BEST VALUE</div>
             <h2>CRYPTO BOOK</h2>
             <p class="pricing-price"><span class="pricing-old-price">$99</span> $22</p>
             {/* <button class="pricing-join-btn">Join Now</button> */}
@@ -99,7 +99,7 @@ const Pricing = () => {
         </div>
 
         {/* <!-- Discord Premium Plan --> */}
-        <div class="pricing-card">
+        <div class="pricing-card pro-card">
             <h2>DISCORD PREMIUM</h2>
             <p class="pricing-price"><span class="pricing-old-price">$119</span> $49 <span class="pricing-monthly">/month</span></p>
             {/* <button class="pricing-join-btn">Join Now</button> */}
