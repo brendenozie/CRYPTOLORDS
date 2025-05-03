@@ -5,7 +5,6 @@ const PackagesPage = () => {
   const packages = [
   {
     title: "Free Plan",
-    price:"",
     highlights: [
       "General Channel.",
       "Twitter Tracker.",
@@ -121,7 +120,7 @@ const PackagesPage = () => {
               <h2>{pkg.title}</h2>
             </div>
             <div className="card-price">              
-              <h3>${pkg.price}</h3>
+              <h3>${pkg.price ? pkg.price : 0}</h3>
             </div>
             <div className="card-body">
               <h3>Highlights</h3>
