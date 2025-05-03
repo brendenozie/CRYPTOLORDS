@@ -5,7 +5,7 @@ const PackagesPage = () => {
   const packages = [
   {
     title: "Free Plan",
-    price:"1",
+    price:"",
     highlights: [
       "General Channel.",
       "Twitter Tracker.",
@@ -82,8 +82,8 @@ const PackagesPage = () => {
     ],
   },
   {
-    title: "Pro's Choice",
-    price:"99.95",
+    title: "Course",
+    price:"119",
     highlights: [
       "Mentorship",
       "Premium Discord",
